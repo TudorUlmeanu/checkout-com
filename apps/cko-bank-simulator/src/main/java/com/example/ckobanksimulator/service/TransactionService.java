@@ -1,9 +1,9 @@
 package com.example.ckobanksimulator.service;
 
 import com.example.ckobanksimulator.exceptions.TransactionException;
-import com.example.ckobanksimulator.objects.Status;
-import com.example.ckobanksimulator.objects.paymentRequest.PaymentRequest;
-import com.example.ckobanksimulator.objects.paymentRequest.Transaction;
+import com.example.ckobanksimulator.domain.Status;
+import com.example.ckobanksimulator.domain.paymentRequest.PaymentRequest;
+import com.example.ckobanksimulator.domain.paymentRequest.Transaction;
 import com.example.ckobanksimulator.repository.TransactionRepository;
 import com.example.ckobanksimulator.validator.CardValidator;
 import org.slf4j.Logger;

@@ -1,16 +1,14 @@
 package com.example.ckobanksimulator.repository;
 
-import com.example.ckobanksimulator.objects.paymentRequest.PaymentRequest;
-import com.example.ckobanksimulator.objects.Status;
-import com.example.ckobanksimulator.objects.paymentRequest.Transaction;
-import com.example.ckobanksimulator.service.TransactionService;
+import com.example.ckobanksimulator.domain.paymentRequest.PaymentRequest;
+import com.example.ckobanksimulator.domain.Status;
+import com.example.ckobanksimulator.domain.paymentRequest.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
@@ -64,7 +62,6 @@ public class TransactionRepository {
 
     public Integer getLastIndex() {
         return jdbcTemplate.queryForObject(SELECT_LAST_ID, Integer.class);
-
     }
 
     public void saveTransaction(final Status status, final String transactionReference, final Integer amount, final String currency, final String correlationId) {

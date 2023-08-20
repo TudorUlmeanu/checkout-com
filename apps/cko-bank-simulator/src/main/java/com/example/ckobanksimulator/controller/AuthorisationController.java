@@ -1,10 +1,10 @@
 package com.example.ckobanksimulator.controller;
 
-import com.example.ckobanksimulator.objects.Status;
-import com.example.ckobanksimulator.objects.paymentRequest.PaymentRequest;
-import com.example.ckobanksimulator.objects.paymentResponse.Links;
-import com.example.ckobanksimulator.objects.paymentResponse.PaymentResponse;
-import com.example.ckobanksimulator.objects.paymentResponse.RiskFactor;
+import com.example.ckobanksimulator.domain.Status;
+import com.example.ckobanksimulator.domain.paymentRequest.PaymentRequest;
+import com.example.ckobanksimulator.domain.paymentResponse.Links;
+import com.example.ckobanksimulator.domain.paymentResponse.PaymentResponse;
+import com.example.ckobanksimulator.domain.paymentResponse.RiskFactor;
 import com.example.ckobanksimulator.service.TransactionService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
