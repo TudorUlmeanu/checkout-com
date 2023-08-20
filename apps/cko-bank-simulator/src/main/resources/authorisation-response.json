@@ -1,0 +1,45 @@
+{
+  "outcome": "authorized",
+  "riskFactors": [{
+    "risk": "not_matched",
+    "type": "cvc"
+  },
+    {
+      "risk": "not_checked",
+      "detail": "postcode",
+      "type": "avs"
+    },
+    {
+      "risk": "not_matched",
+      "detail": "address",
+      "type": "avs"
+    }
+  ],
+  "exemption": {
+    "result": "honored",
+    "reason": "issuerHonored"
+  },
+  "issuer": {
+    "authorizationCode": "0"
+  },
+  "_links": {
+    "payments:cancel": {
+      "href": "https://try.access.worldpay.com/payments/authorizations/cancellations/eyJrIjoiazNhYjYzMiJ9"
+    },
+    "payments:settle": {
+      "href": "https://try.access.worldpay.com/payments/settlements/full/eyJrIjoiazNhYjYzMiJ9"
+    },
+    "payments:partialSettle": {
+      "href": "https://try.access.worldpay.com/payments/settlements/partials/eyJrIjoiazNhYjYzMiJ9"
+    },
+    "payments:events": {
+      "href": "https://try.access.worldpay.com/payments/events/eyJrIjoiazNhYjYzMiJ9"
+    },
+    "curies": [{
+      "name": "payments",
+      "href": "https://try.access.worldpay.com/rels/payments/{rel}",
+      "templated": true
+    }]
+  }
+}
+

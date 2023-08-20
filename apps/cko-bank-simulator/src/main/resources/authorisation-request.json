@@ -1,0 +1,23 @@
+{
+  "transactionReference": "Memory265-13/08/1876",
+  "merchant": {
+    "entity": "MindPalaceLtd"
+  },
+  "instruction": {
+    "narrative": {
+      "line1": "Mind Palace"
+    },
+    "value": {
+      "currency": "GBP",
+      "amount": 250
+    },
+    "paymentInstrument": {
+      "type": "card/plain",
+      "cardNumber": "4444333322221111",
+      "cardExpiryDate": {
+        "month": 5,
+        "year": 2035
+      }
+    }
+  }
+}

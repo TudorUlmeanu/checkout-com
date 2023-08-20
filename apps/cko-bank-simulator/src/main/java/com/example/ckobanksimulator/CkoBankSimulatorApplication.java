@@ -1,13 +1,13 @@
-package comcheckout;
+package com.example.ckobanksimulator;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CheckoutComApplication {
+public class CkoBankSimulatorApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CheckoutComApplication.class, args);
+        SpringApplication.run(CkoBankSimulatorApplication.class, args);
     }
 
 }
