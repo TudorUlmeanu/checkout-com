@@ -13,20 +13,22 @@
  * brew install apache-activemq
  * brew services start activemq
 
-3. run cko-bank-simulator
-4. run payments-gateway
+3. start cko-bank-simulator
+4. start payments-gateway
 
 
 ## cko-bank-simulator
 The cko-bank-simulator follows the one-time payment documentation of Worldpay API
 >https://developer.worldpay.com/docs/access-worldpay/payments/authorize-a-payment
 
-Create authorisation -> Settle Transaction -> Refund Transaction
+Create authorisation -> Settle Transaction -> Refund Transaction 
+
 Create authorisation -> Cancel Authorisation
 
 ## payment-gateway
-Use */payment*" endpoint to create an authorisation
-Once the *authorisation* is completed is automatically creates a Settle Transaction
+Use */payment* endpoint to create an *authorisation*
+
+Once the *authorisation* is completed it automatically creates a *settle Transaction*
 
 ## Documentation
 # Project: checkout-com-postman
