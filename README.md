@@ -6,12 +6,10 @@
 ## System Design
 ![Alt text](documentation/system-design.png "System Diagram")
 
-
 ## How to run
 1. install and run mysql with password: Checkout.comTest
 * brew install mysql
 * mysql -u root -p
-
 
 2. install and run acitve mq
  * brew install apache-activemq
@@ -19,15 +17,6 @@
 
 3. start cko-bank-simulator
 4. start payments-gateway
-
-## Further improvements
-1. Complete tests suits, adding acceptance tests for all situations including sad path
-2. Secure communication between microservices 
-3. Use Bearer token to access payment-gateway
-4. Revisit the object fields to add lombok to all, double check which one should not have setters
-5. Extend payments-gateway to allow refund/cancel transaction (factory already in place, needs to be extended)
-6. Extend payments-gateway to have a factory for payment method selector
-7. Separate domain objects from transfer objects
 
 ## cko-bank-simulator
 The cko-bank-simulator follows the one-time payment documentation of Worldpay API
@@ -41,6 +30,15 @@ Create authorisation -> Cancel Authorisation
 Use */payment* endpoint to create an *authorisation*
 
 Once the *authorisation* is completed it automatically creates a *Settle Transaction*
+
+## Further improvements
+1. Complete tests suits, adding acceptance tests for all situations including sad path
+2. Secure communication between microservices
+3. Use Bearer token to access payment-gateway
+4. Revisit the object fields to add lombok to all, double check which one should not have setters
+5. Extend payments-gateway to allow refund/cancel transaction (factory already in place, needs to be extended)
+6. Extend payments-gateway to have a factory for payment method selector
+7. Separate domain objects from transfer objects
 
 ## Documentation
 # Project: checkout-com-postman
