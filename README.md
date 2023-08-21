@@ -16,6 +16,18 @@
 3. run cko-bank-simulator
 4. run payments-gateway
 
+
+## cko-bank-simulator
+The cko-bank-simulator follows the one-time payment documentation of Worldpay API
+>https://developer.worldpay.com/docs/access-worldpay/payments/authorize-a-payment
+
+Create authorisation -> Settle Transaction -> Refund Transaction
+Create authorisation -> Cancel Authorisation
+
+## payment-gateway
+Use */payment*" endpoint to create an authorisation
+Once the *authorisation* is completed is automatically creates a Settle Transaction
+
 ## Documentation
 # Project: checkout-com-postman
 # 📁 Collection: payment-gateway
