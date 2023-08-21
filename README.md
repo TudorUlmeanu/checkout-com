@@ -1,6 +1,6 @@
 # Checkout.com Solution
 
-![Alt text](documentation/system-diagram.png "System Diagram")
+![Alt text](documentation/system-design.png "System Diagram")
 
 
 ## How to run
