@@ -3,11 +3,13 @@ package com.example.paymentgateway.domain;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@Builder
 public class CardExpiryDate {
 
     @Min(value = 1, message = "Month must be between 1 and 12")

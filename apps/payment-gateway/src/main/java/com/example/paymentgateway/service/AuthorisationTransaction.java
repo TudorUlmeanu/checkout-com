@@ -26,7 +26,6 @@ public class AuthorisationTransaction implements Transaction<PaymentRequest> {
         this.ckoBankAdaptor = ckoBankAdaptor;
     }
 
-
     @Override
     public void transact(final PaymentRequest paymentRequest) {
         final String transactionReference = generateTransactionReference(paymentRequest.getMerchant().getMerchantName());

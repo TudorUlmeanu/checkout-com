@@ -2,14 +2,12 @@ package com.example.paymentgateway.adaptor.responses.payment;
 
 import com.example.paymentgateway.adaptor.responses.Links;
 import com.example.paymentgateway.adaptor.responses.RiskFactor;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

@@ -4,12 +4,17 @@ import com.example.paymentgateway.adaptor.requests.*;
 import com.example.paymentgateway.adaptor.responses.payment.PaymentResponse;
 import com.example.paymentgateway.adaptor.responses.transaction.TransactionResponse;
 import com.example.paymentgateway.domain.PaymentRequest;
+import com.example.paymentgateway.domain.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
 
 @Component
 public class CkoBankAdaptor {
@@ -30,6 +35,10 @@ public class CkoBankAdaptor {
 
     public ResponseEntity<TransactionResponse> execute(final String correlationId) {
         return restTemplate.postForEntity(url + "/transaction/settle/" + correlationId, null, TransactionResponse.class);
+    }
+
+    public ResponseEntity<List<Transaction>> executeEvents(final String correlationId) {
+        return restTemplate.exchange(url + "/transaction/events/" + correlationId, HttpMethod.GET, null, new ParameterizedTypeReference<List<Transaction>>() {});
     }
 
     private HttpEntity<CkoPaymentRequest> buildRequest(final PaymentRequest paymentRequest, final String transactionReference) {

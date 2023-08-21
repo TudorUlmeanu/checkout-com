@@ -54,7 +54,7 @@ public class TransactionRepository {
     }
 
     public String getCorrelationId(final String transactionReference) {
-        return jdbcTemplate.queryForObject(SELECT_CORRELATION_ID, new Object[]{transactionReference}, String.class);
+        return jdbcTemplate.queryForObject(SELECT_CORRELATION_ID, new Object[]{transactionReference}, String.class).replaceAll(" ", "");
     }
 
     public void updateTransaction(final String status, final String transactionReference) {
