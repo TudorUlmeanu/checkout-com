@@ -6,5 +6,5 @@ public interface Transaction<T> {
 
     TransactionType getType();
 
-    void transact(T object);
+    String transact(T object);
 }

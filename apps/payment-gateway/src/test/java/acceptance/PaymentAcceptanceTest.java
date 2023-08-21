@@ -92,7 +92,7 @@ public class PaymentAcceptanceTest {
 
 
     private void whenISendThePaymentRequestToTheEndpoint() {
-        String url = "http://localhost:" + port + "/authorisation";
+        String url = "http://localhost:" + port + "/payment";
 
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<PaymentRequest> requestEntity = new HttpEntity<>(paymentRequest, headers);

@@ -20,11 +20,11 @@ public class PaymentController {
         this.paymentService = paymentService;
     }
 
-    @PostMapping("/authorisation")
-    public ResponseEntity<HttpStatus> payment(@Valid @RequestBody final PaymentRequest paymentRequest) {
-        paymentService.processTransaction(TransactionType.AUTHORISE, paymentRequest);
+    @PostMapping("/payment")
+    public ResponseEntity<String> payment(@Valid @RequestBody final PaymentRequest paymentRequest) {
+        final String transactionReference = paymentService.processTransaction(TransactionType.AUTHORISE, paymentRequest);
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(transactionReference, HttpStatus.OK);
     }
 
     @GetMapping("/events/{transactionReference}")

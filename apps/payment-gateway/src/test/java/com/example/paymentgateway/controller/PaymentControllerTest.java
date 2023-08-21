@@ -39,7 +39,7 @@ public class PaymentControllerTest {
                 .totalAmount(12.0)
                 .build();
 
-        mockMvc.perform(MockMvcRequestBuilders.post("/authorisation")
+        mockMvc.perform(MockMvcRequestBuilders.post("/payment")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(asJsonString(paymentRequest)))
                 .andExpect(MockMvcResultMatchers.status().isOk());
@@ -56,7 +56,7 @@ public class PaymentControllerTest {
                 .totalAmount(12.0)
                 .build();
 
-        mockMvc.perform(MockMvcRequestBuilders.post("/authorisation")
+        mockMvc.perform(MockMvcRequestBuilders.post("/payment")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(asJsonString(paymentRequest)))
                 .andExpect(MockMvcResultMatchers.status().isBadRequest());

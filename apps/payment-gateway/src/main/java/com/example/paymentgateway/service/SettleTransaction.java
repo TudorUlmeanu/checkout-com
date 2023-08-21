@@ -23,14 +23,15 @@ public class SettleTransaction implements Transaction<TransactionRequest> {
     }
 
     @Override
-    public void transact(final TransactionRequest transactionRequest) {
-        String correlationId = transactionRepository.getCorrelationId(transactionRequest.getTransactionReference());
+    public String transact(final TransactionRequest transactionRequest) {
+        final String correlationId = transactionRepository.getCorrelationId(transactionRequest.getTransactionReference());
         TransactionResponse transactionResponse = ckoBankAdaptor.execute(correlationId).getBody();
 
         if(transactionResponse.getOutcome().equals(Status.SETTLED.name())) {
             transactionRepository.updateTransaction(Status.SETTLED.name(), transactionRequest.getTransactionReference());
         }
 
+        return correlationId;
     }
 
     @Override

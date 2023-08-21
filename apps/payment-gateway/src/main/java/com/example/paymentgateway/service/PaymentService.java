@@ -22,8 +22,8 @@ public class PaymentService {
         this.ckoBankAdaptor = ckoBankAdaptor;
     }
 
-    public void processTransaction(final TransactionType transactionType, Object o) {
-        TransactionFactory.getTransaction(transactionType).transact(o);
+    public String processTransaction(final TransactionType transactionType, Object o) {
+        return TransactionFactory.getTransaction(transactionType).transact(o);
     }
 
     public List<Transaction> getTransactions(final String transactionReference) {

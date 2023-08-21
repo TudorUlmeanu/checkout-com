@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "893b96b3-d36c-466c-b860-d10a8f26edea",
+		"name": "checkout-com-postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23134854"
+	},
+	"item": [
+		{
+			"name": "payment-gateway",
+			"item": [
+				{
+					"name": "Retrieve transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/events/{transactionReference}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"events",
+								"{transactionReference}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Make payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"merchant\": {\n        \"merchantName\": \"Tudor's shop\"\n    },\n    \"basket\": {\n        \"items\": [\n            {\n                \"name\": \"Item 1\",\n                \"description\": \"Item description 1\",\n                \"quantity\": 1,\n                \"price\": 12.0\n            },\n            {\n                \"name\": \"Item 2\",\n                \"description\": \"Item description 2\",\n                \"quantity\": 1,\n                \"price\": 12.0\n            }\n        ],\n        \"amount\": 24.0\n    },\n    \"cardDetails\": {\n        \"cardNumber\": \"1111222233334444\",\n        \"cardExpiryDate\": {\n            \"month\": 11,\n            \"year\": 2024\n        },\n        \"cvv\": \"123\"\n    },\n    \"paymentMethod\": \"card\",\n    \"currency\": \"GBP\",\n    \"totalAmount\": 24.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"payment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cko-bank-simulator",
+			"item": [
+				{
+					"name": "Create authorisation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "Create authorisation",
+							"host": [
+								"Create authorisation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Setttle transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/payments/transaction/settle/{correlationId}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"payments",
+								"transaction",
+								"settle",
+								"{correlationId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refund Transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/payments/transaction/refund/{correlationId}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"payments",
+								"transaction",
+								"refund",
+								"{correlationId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Authorisation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/payments/transaction/cancel/{correlationId}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"payments",
+								"transaction",
+								"cancel",
+								"{correlationId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve events",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

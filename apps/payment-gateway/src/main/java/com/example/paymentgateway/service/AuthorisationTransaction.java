@@ -27,7 +27,7 @@ public class AuthorisationTransaction implements Transaction<PaymentRequest> {
     }
 
     @Override
-    public void transact(final PaymentRequest paymentRequest) {
+    public String transact(final PaymentRequest paymentRequest) {
         final String transactionReference = generateTransactionReference(paymentRequest.getMerchant().getMerchantName());
 
         transactionRepository.saveAuthorisation(paymentRequest, transactionReference);
@@ -37,6 +37,8 @@ public class AuthorisationTransaction implements Transaction<PaymentRequest> {
             transactionRepository.consolidateTransaction(Status.AUTHORISED, response, transactionReference);
             activeMQProducer.publish(new TransactionRequest(TransactionType.SETTLE, transactionReference));
         }
+
+        return transactionReference;
     }
 
     private String generateTransactionReference(final String merchant) {
