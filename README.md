@@ -1,5 +1,7 @@
 # Checkout.com Solution
 
+>https://c.smartrecruiters.com/sr-company-attachments-prod-aws-dc5/63594668c67784587b6c5a3f/fe7584e2-e8df-46f0-ab14-446b6df44411?r=s3-eu-central-1
+
 ![Alt text](documentation/system-design.png "System Diagram")
 
 
@@ -28,7 +30,7 @@ Create authorisation -> Cancel Authorisation
 ## payment-gateway
 Use */payment* endpoint to create an *authorisation*
 
-Once the *authorisation* is completed it automatically creates a *settle Transaction*
+Once the *authorisation* is completed it automatically creates a *Settle Transaction*
 
 ## Documentation
 # Project: checkout-com-postman
