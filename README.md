@@ -3,6 +3,7 @@
 ## The Problem
 >https://c.smartrecruiters.com/sr-company-attachments-prod-aws-dc5/63594668c67784587b6c5a3f/fe7584e2-e8df-46f0-ab14-446b6df44411?r=s3-eu-central-1
 
+## System Design
 ![Alt text](documentation/system-design.png "System Diagram")
 
 
@@ -20,6 +21,13 @@
 4. start payments-gateway
 
 ## Further improvements
+1. Complete tests suits, adding acceptance tests for all situations including sad path
+2. Secure communication between microservices 
+3. Use Bearer token to access payment-gateway
+4. Revisit the object fields to add lombok to all, double check which one should not have setters
+5. Extend payments-gateway to allow refund/cancel transaction (factory already in place, needs to be extended)
+6. Extend payments-gateway to have a factory for payment method selector
+7. Separate domain objects from transfer objects
 
 ## cko-bank-simulator
 The cko-bank-simulator follows the one-time payment documentation of Worldpay API
