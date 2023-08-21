@@ -1,5 +1,6 @@
 # Checkout.com Solution
 
+## The Problem
 >https://c.smartrecruiters.com/sr-company-attachments-prod-aws-dc5/63594668c67784587b6c5a3f/fe7584e2-e8df-46f0-ab14-446b6df44411?r=s3-eu-central-1
 
 ![Alt text](documentation/system-design.png "System Diagram")
@@ -18,6 +19,7 @@
 3. start cko-bank-simulator
 4. start payments-gateway
 
+## Further improvements
 
 ## cko-bank-simulator
 The cko-bank-simulator follows the one-time payment documentation of Worldpay API
